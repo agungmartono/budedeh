@@ -3,6 +3,11 @@
  * @Github: https://github.com/agungmartono
  * @Email: agungmartonolabs@gmail.com
 -->
+<!--
+ * @Author: Agung Martono
+ * @Github: https://github.com/agungmartono
+ * @Email: agungmartonolabs@gmail.com
+-->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
@@ -27,7 +32,7 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p> Dashboard </p>
                     </a>
@@ -56,6 +61,24 @@
                         </li>
                     </ul>
                 </li> --}}
+                <li class="nav-item">
+                    <a href="{{ route('rooms.index') }}" class="nav-link {{ request()->routeIs('rooms*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Ruangan
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('doctors.index') }}" class="nav-link {{ request()->routeIs('doctors*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Dokter
+                        </p>
+                    </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="{{ route('registration_patients.index') }}" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>

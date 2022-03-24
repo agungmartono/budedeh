@@ -9,6 +9,11 @@
  * @Github: https://github.com/agungmartono
  * @Email: agungmartonolabs@gmail.com
  */
+/*
+ * @Author: Agung Martono
+ * @Github: https://github.com/agungmartono
+ * @Email: agungmartonolabs@gmail.com
+ */
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -25,6 +30,7 @@ return new class extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
+            $table->string('norm')->unique();
             $table->string('name');
             $table->boolean('gender')->comment('0 laki-laki 1 perempuan');
             $table->text('address');

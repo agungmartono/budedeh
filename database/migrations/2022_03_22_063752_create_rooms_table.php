@@ -4,11 +4,6 @@
  * @Github: https://github.com/agungmartono
  * @Email: agungmartonolabs@gmail.com
  */
-/*
- * @Author: Agung Martono
- * @Github: https://github.com/agungmartono
- * @Email: agungmartonolabs@gmail.com
- */
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -23,13 +18,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('registrations', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->string('noregistration')->unique();
-            $table->foreignId('room_id')->constrained();
-            $table->foreignId('doctor_id')->constrained();
-            $table->foreignId('patient_id')->constrained();
-            $table->dateTime('registration_date');
+            $table->boolean('installation')->default(0)->comment('0 rawat jalan 1 rawat inap');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
@@ -41,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registrations');
+        Schema::dropIfExists('rooms');
     }
 };

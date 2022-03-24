@@ -4,9 +4,21 @@
  * @Github: https://github.com/agungmartono
  * @Email: agungmartonolabs@gmail.com
  */
+/*
+ * @Author: Agung Martono
+ * @Github: https://github.com/agungmartono
+ * @Email: agungmartonolabs@gmail.com
+ */
+/*
+ * @Author: Agung Martono
+ * @Github: https://github.com/agungmartono
+ * @Email: agungmartonolabs@gmail.com
+ */
 
+use App\Http\Controllers\Backend\DoctorController;
 use App\Http\Controllers\Backend\Pages\DashboardController;
 use App\Http\Controllers\Backend\RegistrationController;
+use App\Http\Controllers\Backend\RoomController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +37,9 @@ Route::get('/', function () {
 });
 
 Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::resource('rooms', RoomController::class);
+Route::resource('doctors', DoctorController::class);
 
 Route::controller(RegistrationController::class)
     ->prefix('notifications')

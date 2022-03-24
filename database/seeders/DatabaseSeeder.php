@@ -7,6 +7,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Doctor;
+use App\Models\Room;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -27,5 +29,40 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => bcrypt('secure'),
         ]);
+
+        // 0 rawat jalan, 1 rawat inap
+        Room::create([
+            'installation' => FALSE,
+            'name' => 'Poli Mata',
+        ]);
+
+        Room::create([
+            'installation' => FALSE,
+            'name' => 'Poli Jantung',
+        ]);
+
+        Room::create([
+            'installation' => TRUE,
+            'name' => 'Ruangan Elang',
+        ]);
+
+        Room::create([
+            'installation' => TRUE,
+            'name' => 'Ruangan Perkutut',
+        ]);
+
+        Doctor::create([
+            'name' => 'Dr. Luhut Situmorang'
+        ]);
+
+        Doctor::create([
+            'name' => 'Dr. Jokowi'
+        ]);
+
+        Doctor::create([
+            'name' => 'Dr. Prabowo'
+        ]);
+
+        
     }
 }

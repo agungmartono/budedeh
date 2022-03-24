@@ -18,6 +18,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('backend/plugins/fontawesome-free/css/all.min.css') }}">
+    @stack('css')
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('backend/css/adminlte.min.css') }}">
 </head>
@@ -62,6 +63,7 @@
     <script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    @stack('js')
     <!-- AdminLTE App -->
     <script src="{{ asset('backend/js/adminlte.min.js') }}"></script>
 </body>
