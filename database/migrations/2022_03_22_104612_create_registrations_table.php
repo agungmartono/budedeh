@@ -9,6 +9,11 @@
  * @Github: https://github.com/agungmartono
  * @Email: agungmartonolabs@gmail.com
  */
+/*
+ * @Author: Agung Martono
+ * @Github: https://github.com/agungmartono
+ * @Email: agungmartonolabs@gmail.com
+ */
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -29,7 +34,7 @@ return new class extends Migration
             $table->foreignId('room_id')->constrained();
             $table->foreignId('doctor_id')->constrained();
             $table->foreignId('patient_id')->constrained();
-            $table->dateTime('registration_date');
+            $table->date('registration_date');
             $table->timestamps();
         });
     }

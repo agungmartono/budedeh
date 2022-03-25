@@ -80,7 +80,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('registration_patients.index') }}" class="nav-link">
+                    <a href="{{ route('registration_patients.create') }}" class="nav-link {{ request()->routeIs('registration_patients.create') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Pendaftaran Pasien Baru

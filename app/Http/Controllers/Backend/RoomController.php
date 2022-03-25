@@ -124,4 +124,13 @@ class RoomController extends Controller
 
         }
     }
+
+    public function getInstallation($type)
+    {
+        // dd($type);
+
+        $rooms = Room::where('installation', $type)->get();
+
+        return response()->json($rooms);
+    }
 }
