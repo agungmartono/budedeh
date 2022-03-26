@@ -8,6 +8,11 @@
  * @Github: https://github.com/agungmartono
  * @Email: agungmartonolabs@gmail.com
 -->
+<!--
+ * @Author: Agung Martono
+ * @Github: https://github.com/agungmartono
+ * @Email: agungmartonolabs@gmail.com
+-->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
@@ -34,48 +39,21 @@
                 <li class="nav-item">
                     <a href="{{ route('dashboard') }}" class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p> Dashboard </p>
+                        <p>Dashboard</p>
                     </a>
                 </li>
 
-                {{-- <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>
-                            Starter Pages
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Active Page</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Inactive Page</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> --}}
                 <li class="nav-item">
                     <a href="{{ route('rooms.index') }}" class="nav-link {{ request()->routeIs('rooms*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Ruangan
-                        </p>
+                        <i class="nav-icon fas fa-hospital-alt"></i>
+                        <p>Ruangan</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{ route('doctors.index') }}" class="nav-link {{ request()->routeIs('doctors*') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Dokter
-                        </p>
+                        <i class="nav-icon fas fa-user-md"></i>
+                        <p>Dokter</p>
                     </a>
                 </li>
 
@@ -105,10 +83,6 @@
                             <span class="right badge badge-danger">New</span>
                         </p>
                     </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                        @csrf
-                    </form>
                 </li>
             </ul>
         </nav>

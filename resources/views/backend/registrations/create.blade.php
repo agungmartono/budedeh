@@ -3,12 +3,9 @@
  * @Github: https://github.com/agungmartono
  * @Email: agungmartonolabs@gmail.com
 -->
-<!--
- * @Author: Agung Martono
- * @Github: https://github.com/agungmartono
- * @Email: agungmartonolabs@gmail.com
--->
 @extends('layouts.backend.master')
+
+@section('title', 'Registrasi Pasien Baru')
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('backend/plugins/daterangepicker/daterangepicker.css') }}">
@@ -32,7 +29,7 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Formulir Tambah Registrasi</h3>
+                            <h3 class="card-title">Formulir Registrasi Pasien Baru</h3>
                         </div>
                         <form class="form-horizontal" action="{{ route('registration_patients.store') }}" method="POST" autocomplete="off">
                             @csrf
