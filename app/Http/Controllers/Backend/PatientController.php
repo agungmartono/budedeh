@@ -7,6 +7,9 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Models\Patient;
+use App\Models\Doctor;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -19,7 +22,11 @@ class PatientController extends Controller
      */
     public function index()
     {
-        //
+        $patiens = Patient::orderByDesc('created_at')->get();
+
+        return view('backend.patients.index', [
+            'patiens' => $patiens
+        ]);
     }
 
     /**
@@ -29,7 +36,7 @@ class PatientController extends Controller
      */
     public function create()
     {
-        //
+// 
     }
 
     /**
@@ -62,7 +69,15 @@ class PatientController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $patiens = Patient::orderByDesc('created_at')->get();
+        $patient_registration = Patient::findOrFail($id);
+        $doctors = Doctor::all();
+
+        return view('backend.patients.edit', [
+            // 'patiens' => $patiens,
+            'patient_registration' => $patient_registration,
+            'doctors' => $doctors
+        ]);
     }
 
     /**

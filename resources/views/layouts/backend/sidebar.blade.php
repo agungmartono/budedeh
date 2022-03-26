@@ -89,6 +89,15 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="{{ route('patients.index') }}" class="nav-link">
+                        <i class="nav-icon fas fa-th"></i>
+                        <p>
+                            Pendaftaran Pasien Lama
+                        </p>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>

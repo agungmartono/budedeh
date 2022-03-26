@@ -10,6 +10,7 @@ namespace Database\Seeders;
 use App\Models\Doctor;
 use App\Models\Room;
 use App\Models\User;
+use App\Models\Patient;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -61,6 +62,15 @@ class DatabaseSeeder extends Seeder
 
         Doctor::create([
             'name' => 'Dr. Prabowo'
+        ]);
+
+        Patient::create([
+            'norm' => '000001',
+            'name' => 'waluyo',
+            'gender' => TRUE,
+            'address' => 'serang walantaka',
+            'dob' => now(),
+            'pob' => 'Pandeglang',
         ]);
 
         

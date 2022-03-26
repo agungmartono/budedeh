@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\DoctorController;
 use App\Http\Controllers\Backend\Pages\DashboardController;
 use App\Http\Controllers\Backend\RegistrationController;
 use App\Http\Controllers\Backend\RoomController;
+use App\Http\Controllers\Backend\PatientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +33,7 @@ Route::middleware('auth')->group(function(){
     Route::get('rooms/installation/{type}', [RoomController::class, 'getInstallation']);
     Route::resource('rooms', RoomController::class);
     Route::resource('doctors', DoctorController::class);
+    Route::resource('patients', PatientController::class);
     
     Route::controller(RegistrationController::class)
         ->name('registration_patients.')
