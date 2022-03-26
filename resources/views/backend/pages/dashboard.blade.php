@@ -28,8 +28,10 @@
                         <div class="icon">
                             <i class="fas fa-user-injured"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('patients.index') }}" class="small-box-footer">
+                            Info lebih lanjut 
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -44,8 +46,10 @@
                         <div class="icon">
                             <i class="fas fa-cash-register"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('registration_patients.index') }}" class="small-box-footer">
+                            Info lebih lanjut 
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -60,8 +64,10 @@
                         <div class="icon">
                             <i class="fas fa-hospital"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('rooms.index') }}" class="small-box-footer">
+                            Info lebih lanjut 
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -76,8 +82,10 @@
                         <div class="icon">
                             <i class="fas fa-user-md"></i>
                         </div>
-                        <a href="#" class="small-box-footer">More info <i
-                                class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{ route('doctors.index') }}" class="small-box-footer">
+                            Info lebih lanjut 
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
                     </div>
                 </div>
                 <!-- ./col -->
