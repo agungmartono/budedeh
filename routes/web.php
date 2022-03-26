@@ -43,5 +43,6 @@ Route::middleware('auth')->group(function(){
             Route::post('registration-patients/', 'store')->name('store');
             Route::get('registration-patients/edit', 'edit')->name('edit');
             Route::delete('registration-patients/{id}', 'destroy')->name('destroy');
+            Route::post('registration-patients/', 'registration_patient_old')->name('registration_patient_old');
         });
 });

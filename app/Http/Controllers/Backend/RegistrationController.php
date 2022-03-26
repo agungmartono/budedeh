@@ -28,8 +28,8 @@ class RegistrationController extends Controller
      */
     public function index()
     {
-        $registrations = Registration::orderByDesc('id')->get();
-
+        $registrations = Registration::with(['doctor', 'patient', 'room'])->orderByDesc('id')->get();
+        // dd($registrations);
         return view('backend.registrations.index', [
             'registrations' => $registrations
         ]);
@@ -57,6 +57,7 @@ class RegistrationController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             "name" => ['required', 'string', 'min:2'],
             "gender" => ['required', 'boolean'],
@@ -156,4 +157,46 @@ class RegistrationController extends Controller
     {
         //
     }
+
+    public function registration_patient_old(Request $request)
+    {
+        // dd($request->all());
+        $request->validate([
+            "room_id" => ['required'],
+            "doctor_id" => ['required'],
+        ]);
+
+        $maxNoRM = Patient::latest()->first();
+        $maxnoRegistration = Registration::where('registration_date', now()->startOfDay())->latest()->first();
+
+        if(empty($maxNoRM)){
+            $maxRM = sprintf("%06s", 1);
+        }else{
+            $maxRM = sprintf("%06s", $maxNoRM->norm + 1);
+        }
+
+        if(empty($maxnoRegistration)){
+            $maxNoRegis = now()->format('Ymd') . 1;
+        }else{
+            $maxNoRegis = $maxnoRegistration->noregistration + 1;
+        }
+
+
+
+            $newRegistration = new Registration();
+            $newRegistration->noregistration = $maxNoRegis;
+            $newRegistration->room_id = $request->room_id;
+            $newRegistration->doctor_id = $request->doctor_id;
+            $newRegistration->patient_id = $request->patient;
+            $newRegistration->registration_date = now();
+            $newRegistration->save();
+
+
+        return redirect()->route('registration_patients.index')->with([
+            'type' => 'success',
+            'message' => 'Pendaftaran Pasien Berhasil'
+        ]);
+
+    }
+
 }

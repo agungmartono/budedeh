@@ -11,15 +11,15 @@ class Registration extends Model
     protected $guarded = [];
 
 
-    public function rooms(){
-        return $this->belongsTo( 'App\Models\Room','rooms','id');
+    public function room(){
+        return $this->belongsTo(Room::class);
     }
 
-    public function doctors(){
-        return $this->belongsTo( 'App\Models\Doctor','doctors','id');
+    public function doctor(){
+        return $this->belongsTo( Doctor::class );
     }
 
-    public function patients(){
-        return $this->belongsTo( 'App\Models\Patient','patients','id');
+    public function patient(){
+        return $this->belongsTo( Patient::class );
     }
 }

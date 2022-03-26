@@ -34,9 +34,9 @@
                         <div class="card-header">
                             <h3 class="card-title">Formulir Tambah Registrasi</h3>
                         </div>
-                        <form class="form-horizontal" action="{{ route('registration_patients.store') }}" method="POST" autocomplete="off">
+                        <form class="form-horizontal" action="{{ route('registration_patients.registration_patient_old') }}" method="POST" autocomplete="off">
                             @csrf
-                            @method('PUT')
+                            <input type="hidden" value="{{ $patient_registration->id }}" name="patient">
                             <div class="card-body">
                                 <div class="row">
 
@@ -106,8 +106,8 @@
                                         <div class="form-group">
                                             <label>Tanggal Lahir<code>*</code></label>
                                             <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" name="dob" value="{{ old('dob', $patient_registration->dob->format('Y-m-d')) }}"/>
-                                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
+                                                <input type="text" class="form-control datetimepicker-input" data-target="#reservationdate" name="dob" value="{{ old('dob', $patient_registration->dob->format('m/d/Y')) }}" disabled/>
+                                                <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker" >
                                                     <div class="input-group-text">
                                                         <i class="fa fa-calendar"></i>
                                                     </div>

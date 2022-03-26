@@ -28,7 +28,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data Dokter</h3>
+                            <h3 class="card-title">Data Registrasi Pasien</h3>
                             <div class="card-tools">
                                 <a href="{{ route('registration_patients.create') }}" class="btn btn-primary">
                                     Tambah Registrasi
@@ -41,7 +41,12 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Dokter</th>
+                                        <th>Tgl Registrasi</th>
+                                        <th>No RM</th>
+                                        <th>No Registrasi</th>
+                                        <th>Nama Pasien</th>
+                                        <th>Ruangan</th>
+                                        <th>Dokter</th>
                                         <th class="text-center">Opsi</th>
                                     </tr>
                                 </thead>
@@ -49,7 +54,12 @@
                                     @foreach ($registrations as $registration)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $registration->name }}</td>
+                                        <td>{{ $registration->registration_date }}</td>
+                                        <td>{{ $registration->patient->norm }}</td>
+                                        <td>{{ $registration->noregistration }}</td>
+                                        <td>{{ $registration->patient->name }}</td>
+                                        <td>{{ $registration->room->name }}</td>
+                                        <td>{{ $registration->doctor->name }}</td>
                                         <td class="text-center">
                                             <a href="{{ route('registration_patients.edit', $registration->id) }}" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-edit"></i>
