@@ -58,32 +58,19 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('registration_patients.create') }}" class="nav-link {{ request()->routeIs('registration_patients.create') ? 'active' : '' }}">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Pendaftaran Pasien Baru
-                        </p>
+                    <a href="{{ route('patients.index') }}" class="nav-link {{ request()->routeIs('patients*', 'registration_patients.create') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-cash-register"></i>
+                        <p>Pendaftaran Pasien</p>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{ route('patients.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Pendaftaran Pasien Lama
-                        </p>
+                    <a href="{{ route('registration_patients.index') }}" class="nav-link {{ request()->routeIs('registration_patients.index') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-list"></i>
+                        <p>Daftar Registrasi Pasien</p>
                     </a>
                 </li>
                 
-                <li class="nav-item">
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Logout
-                            <span class="right badge badge-danger">New</span>
-                        </p>
-                    </a>
-                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

@@ -5,6 +5,8 @@
 -->
 @extends('layouts.backend.master')
 
+@section('title', 'Daftar Pasien')
+
 @push('css')
 <link rel="stylesheet" href="{{ asset('backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
 <link rel="stylesheet" href="{{ asset('backend/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
@@ -26,7 +28,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Data Ruangan</h3>
+                            <h3 class="card-title">Data Pasien</h3>
                             <div class="card-tools">
                                 <a href="{{ route('registration_patients.create') }}" class="btn btn-primary">
                                     Tambah Pasien Baru
@@ -66,6 +68,9 @@
                                         <td class="text-center">
                                             <a href="{{ route('patients.edit', $patien->id) }}" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="{{ route('registration_patients.old_patient', $patien->id) }}" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-hand-pointer"></i>
                                             </a>
                                             {{-- <a href="{{ route('patiens.edit', $patien->id) }}" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-edit"></i>

@@ -30,7 +30,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Data Registrasi Pasien</h3>
                             <div class="card-tools">
-                                <a href="{{ route('registration_patients.create') }}" class="btn btn-primary">
+                                <a href="{{ route('patients.index') }}" class="btn btn-primary">
                                     Tambah Registrasi
                                 </a>
                             </div>
@@ -60,7 +60,7 @@
                                         <td>{{ $registration->patient->name }}</td>
                                         <td>{{ $registration->room->name }}</td>
                                         <td>{{ $registration->doctor->name }}</td>
-                                        <td class="text-center">
+                                        <td class="text-center text-nowrap">
                                             <a href="{{ route('registration_patients.edit', $registration->id) }}" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>

@@ -100,6 +100,21 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            Patient::findOrFail($id)->delete();
+
+            return response()->json([
+                'statusCode' => 200,
+                'message' => 'success',
+            ], 200);
+
+        } catch (\Throwable $e) { 
+
+            return response()->json([
+                'statusCode' => 500,
+                'message' => 'There is an error',
+            ], 500);
+
+        }
     }
 }

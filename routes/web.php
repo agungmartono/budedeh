@@ -41,8 +41,10 @@ Route::middleware('auth')->group(function(){
             Route::get('registration-patients', 'index')->name('index');
             Route::get('registration-patients/create', 'create')->name('create');
             Route::post('registration-patients/', 'store')->name('store');
-            Route::get('registration-patients/edit', 'edit')->name('edit');
+            Route::get('registration-patients/{id}/edit', 'edit')->name('edit');
+            Route::put('registration-patients/{id}/', 'update')->name('update');
             Route::delete('registration-patients/{id}', 'destroy')->name('destroy');
-            Route::post('registration-patients/', 'registration_patient_old')->name('registration_patient_old');
+            Route::get('registration-patients/{id}/patient-old', 'oldPatient')->name('old_patient');
+            Route::post('registration-patients/patient-old', 'registration_patient_old')->name('registration_patient_old');
         });
 });

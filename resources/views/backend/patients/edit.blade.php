@@ -3,12 +3,9 @@
  * @Github: https://github.com/agungmartono
  * @Email: agungmartonolabs@gmail.com
 -->
-<!--
- * @Author: Agung Martono
- * @Github: https://github.com/agungmartono
- * @Email: agungmartonolabs@gmail.com
--->
 @extends('layouts.backend.master')
+
+@section('title', 'Edit Pasien')
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('backend/plugins/daterangepicker/daterangepicker.css') }}">
