@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('dashboard');
 });
 
 Route::middleware('auth')->group(function(){
@@ -47,4 +47,13 @@ Route::middleware('auth')->group(function(){
             Route::get('registration-patients/{id}/patient-old', 'oldPatient')->name('old_patient');
             Route::post('registration-patients/patient-old', 'registration_patient_old')->name('registration_patient_old');
         });
+});
+
+Route::get('/home', function(){
+    return redirect('dashboard');
+});
+
+Route::get('logout', function(){
+    \Auth::logout();
+    return redirect('login');
 });

@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in (v2)</title>
+    <title>KLINIK KITA</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -27,7 +27,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="{{ route('login') }}" class="h1"><b>Admin</b>LTE</a>
+                <a href="{{ route('login') }}" class="h1"><b>KLINIK KITA</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
