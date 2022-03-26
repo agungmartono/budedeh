@@ -71,11 +71,11 @@ class PatientController extends Controller
      */
     public function edit($id)
     {
-        $patient_registration = Patient::findOrFail($id);
+        $patient = Patient::findOrFail($id);
         $doctors = Doctor::all();
 
         return view('backend.patients.edit', [
-            'patient_registration' => $patient_registration,
+            'patient' => $patient,
             'doctors' => $doctors
         ]);
     }
@@ -89,7 +89,21 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //    
+        $patient = Patient::find($id);
+        $patient->name = $request->name;
+        $patient->gender = $request->gender;
+        $patient->phone_number = $request->phone_number;
+        $patient->address = $request->address;
+        $patient->dob = $request->dob;
+        $patient->pob = $request->pob;
+        $patient->update();
+
+
+        return redirect()->route('patients.index')->with([
+            'type' => 'success',
+            'message' => 'Berhasil memperbarui pasien'
+        ]);
+
     }
 
     /**

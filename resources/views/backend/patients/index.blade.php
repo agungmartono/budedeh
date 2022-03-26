@@ -69,16 +69,14 @@
                                             <a href="{{ route('patients.edit', $patien->id) }}" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
+
+                                            <a class="btn btn-danger btn-sm destroy" data-id="{{ $patien->id }}" data-name="{{ $patien->name }}">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+
                                             <a href="{{ route('registration_patients.old_patient', $patien->id) }}" class="btn btn-primary btn-sm">
                                                 <i class="fas fa-hand-pointer"></i>
                                             </a>
-                                            {{-- <a href="{{ route('patiens.edit', $patien->id) }}" class="btn btn-primary btn-sm">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                            <a class="btn btn-danger btn-sm destroy" data-id="{{ $patiens->id }}" data-name="{{ $patiens->name }}">
-                                                <i class="fas fa-trash"></i>
-                                            </a>
-                                            TEST --}}
                                         </td>
                                     </tr>
                                     @endforeach
