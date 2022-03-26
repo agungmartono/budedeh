@@ -5,6 +5,8 @@
 -->
 @extends('layouts.backend.master')
 
+@section('title', 'Edit Dokter')
+
 @section('content')
 <div class="content-wrapper">
     <section class="content-header">
